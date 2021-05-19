@@ -1,92 +1,92 @@
-import Fuse from 'fuse.js'
-import { useState, useEffect, useRef } from 'react'
-import { Row, Col, Box } from '@qonsoll/react-design'
-import {
-  Breadcrumb,
-  Typography,
-  message,
-  Divider,
-  Button,
-  Menu,
-  Input
-} from 'antd'
-import {
-  ArrowLeftOutlined,
-  FolderOutlined,
-  PlusOutlined
-} from '@ant-design/icons'
-import { Spinner } from '../../../../components'
-// import { firestore } from '../../../../app/services'
-import { useHistory } from 'react-router-dom'
-import { globalStyles } from '../../../../styles'
-import { styles } from './FormsAll.style'
-import COLLECTIONS from '../../../../constants/collection'
-// import { FormSimpleView } from '../../../../domains/Form/components'
-import { useCollectionData } from 'react-firebase-hooks/firestore'
-// import { getCollectionRef, getTimestamp, setData } from 'app/services/Firestore'
-// import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
-
-const { Title, Text } = Typography
-const mockRoutes = [
-  { path: '/forms', page: 'Forms' },
-  { path: '/images', page: 'Images' },
-  { path: '/videos', page: 'Videos' }
-]
+// import Fuse from 'fuse.js'
+// import { useState, useEffect, useRef } from 'react'
+// import { Row, Col, Box } from '@qonsoll/react-design'
+// import {
+//   Breadcrumb,
+//   Typography,
+//   message,
+//   Divider,
+//   Button,
+//   Menu,
+//   Input
+// } from 'antd'
+// import {
+//   ArrowLeftOutlined,
+//   FolderOutlined,
+//   PlusOutlined
+// } from '@ant-design/icons'
+// import { Spinner } from '../../../../components'
+// // import { firestore } from '../../../../app/services'
+// import { useHistory } from 'react-router-dom'
+// import { globalStyles } from '../../../../styles'
+// import { styles } from './FormsAll.style'
+// import COLLECTIONS from '../../../../constants/collection'
+// // import { FormSimpleView } from '../../../../domains/Form/components'
+// import { useCollectionData } from 'react-firebase-hooks/firestore'
+// // import { getCollectionRef, getTimestamp, setData } from 'app/services/Firestore'
+// // import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
+//
+// const { Title, Text } = Typography
+// const mockRoutes = [
+//   { path: '/forms', page: 'Forms' },
+//   { path: '/images', page: 'Images' },
+//   { path: '/videos', page: 'Videos' }
+// ]
 function FormsAll(props) {
-  const {firestore,getCollectionRef,getTimestamp,setData}=props
-  // [ADDITIONAL HOOKS]
-  const searchRef = useRef()
-  const history = useHistory()
-  const [data] = useCollectionData(
-    getCollectionRef(COLLECTIONS.FORMS).orderBy('creationDate', 'desc')
-  )
-  // [COMPONENT STATE HOOKS]
-  const [isModalVisible, setIsModalVisible] = useState(false)
-  const [currentData, setCurrentData] = useState(data)
-  const fuse = new Fuse(data, { keys: ['title'] })
-
-  // [COMPUTED PROPERTIES]
-  let amountFiles = data?.length
-
-  const formId = firestore.collection(COLLECTIONS.FORMS).doc().id
-  // [CLEAN FUNCTIONS]
-  const searchData = () => {
-    if (searchRef.current.input.value) {
-      const searchRes = fuse.search(searchRef.current.input.value)
-      setCurrentData(searchRes.map((item) => item.item))
-    } else setCurrentData(data)
-  }
-
-  // [USE_EFFECTS]
-  useEffect(() => {
-    data && setCurrentData(data)
-  }, [data])
-
-  const onFormCreate = async (data) => {
-    await setData(COLLECTIONS.FORMS, formId, {
-      id: formId,
-      title: data?.name,
-      subtitle: data?.description || '',
-      creationDate: getTimestamp().now()
-    }).catch((e) => message.error(e.message))
-  }
-
-  const menu = (
-    <Menu>
-      {mockRoutes.map((item, index) => (
-        <Menu.Item key={index}>
-          {/* <Link to={item.path}>{item.page}</Link> */}
-          <Text>{item.page}</Text>
-        </Menu.Item>
-      ))}
-    </Menu>
-  )
-  const showModal = () => {
-    setIsModalVisible(true)
-  }
-  if (!data) {
-    return <Spinner />
-  }
+  // const {firestore,getCollectionRef,getTimestamp,setData}=props
+  // // [ADDITIONAL HOOKS]
+  // const searchRef = useRef()
+  // const history = useHistory()
+  // const [data] = useCollectionData(
+  //   getCollectionRef(COLLECTIONS.FORMS).orderBy('creationDate', 'desc')
+  // )
+  // // [COMPONENT STATE HOOKS]
+  // const [isModalVisible, setIsModalVisible] = useState(false)
+  // const [currentData, setCurrentData] = useState(data)
+  // const fuse = new Fuse(data, { keys: ['title'] })
+  //
+  // // [COMPUTED PROPERTIES]
+  // let amountFiles = data?.length
+  //
+  // const formId = firestore.collection(COLLECTIONS.FORMS).doc().id
+  // // [CLEAN FUNCTIONS]
+  // const searchData = () => {
+  //   if (searchRef.current.input.value) {
+  //     const searchRes = fuse.search(searchRef.current.input.value)
+  //     setCurrentData(searchRes.map((item) => item.item))
+  //   } else setCurrentData(data)
+  // }
+  //
+  // // [USE_EFFECTS]
+  // useEffect(() => {
+  //   data && setCurrentData(data)
+  // }, [data])
+  //
+  // const onFormCreate = async (data) => {
+  //   await setData(COLLECTIONS.FORMS, formId, {
+  //     id: formId,
+  //     title: data?.name,
+  //     subtitle: data?.description || '',
+  //     creationDate: getTimestamp().now()
+  //   }).catch((e) => message.error(e.message))
+  // }
+  //
+  // const menu = (
+  //   <Menu>
+  //     {mockRoutes.map((item, index) => (
+  //       <Menu.Item key={index}>
+  //         {/* <Link to={item.path}>{item.page}</Link> */}
+  //         <Text>{item.page}</Text>
+  //       </Menu.Item>
+  //     ))}
+  //   </Menu>
+  // )
+  // const showModal = () => {
+  //   setIsModalVisible(true)
+  // }
+  // if (!data) {
+  //   return <Spinner />
+  // }
 
   return (<>div</>
     // <Box flexDirection="column" px={45} py={4} minHeight="100%">
