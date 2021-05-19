@@ -1,24 +1,25 @@
 import { useState, useEffect } from 'react'
 import { PageLayout, EditorSidebar, FormContentArea, Spinner } from 'components'
-import { useParams } from 'react-router'
+import { useParams } from 'react-router-dom'
 import { Box } from '@qonsoll/react-design'
 import {
   QuestionForm,
   QuestionLayoutSwitcher
 } from 'domains/Question/components'
-import { getCollectionRef, setData } from 'app/services/Firestore'
-import { QUESTION_TYPES, COLLECTIONS, DEFAULT_IMAGE } from 'app/constants'
+// import { getCollectionRef, setData } from 'app/services/Firestore'
+import { QUESTION_TYPES, COLLECTIONS, DEFAULT_IMAGE } from '../../../../constants'
 import {
   useCurrentQuestionContext,
   useCurrentQuestionContextDispatch,
   DISPATCH_EVENTS
-} from 'app/context/CurrentQuestion'
+} from '../../../../context/CurrentQuestion'
 import {
   useCollectionData,
   useDocumentData
 } from 'react-firebase-hooks/firestore'
 import { message } from 'antd'
-function FormEdit() {
+function FormEdit(props) {
+  const {getCollectionRef,setData}=props
   // [ADDITIONAL HOOKS]
   const { id } = useParams()
   const [form, formLoading] = useDocumentData(
