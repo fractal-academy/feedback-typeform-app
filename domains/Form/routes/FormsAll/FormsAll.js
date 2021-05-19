@@ -21,7 +21,7 @@ import { useHistory } from 'react-router-dom'
 import { globalStyles } from '../../../../styles'
 import { styles } from './FormsAll.style'
 import COLLECTIONS from '../../../../constants/collection'
-import { FormSimpleView } from '../../../../domains/Form/components'
+// import { FormSimpleView } from '../../../../domains/Form/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 // import { getCollectionRef, getTimestamp, setData } from 'app/services/Firestore'
 // import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
@@ -88,89 +88,89 @@ function FormsAll(props) {
     return <Spinner />
   }
 
-  return (
-    <Box flexDirection="column" px={45} py={4} minHeight="100%">
-      {/* Page Header */}
-      <Row noGutters display="flex">
-        <Col cw="auto" p={0} v="center">
-          <Button
-            size="small"
-            type="text"
-            style={globalStyles.resetPadding}
-            icon={<ArrowLeftOutlined style={globalStyles.iconSize} />}
-            onClick={() => history.goBack()}
-          />
-        </Col>
-        <Col cw="auto" p={0} v="center">
-          <Divider type="vertical" />
-        </Col>
-        <Col p={0} v="center">
-          <Breadcrumb>
-            <Breadcrumb.Item>
-              <FolderOutlined />
-              <Text>Folder</Text>
-            </Breadcrumb.Item>
-            <Breadcrumb.Item overlay={menu}>
-              <Text>Forms</Text>
-            </Breadcrumb.Item>
-          </Breadcrumb>
-        </Col>
-      </Row>
-      {/* SecondaryTitle */}
-      <Row noGutters v="center" mb={1} mt={3}>
-        <Col>
-          <Title level={2} style={globalStyles.resetMargin}>
-            Forms
-          </Title>
-        </Col>
-      </Row>
-      <Row noGutters mb={3}>
-        <Col>
-          <Text>You have {amountFiles} files.</Text>
-        </Col>
-      </Row>
-
-      <Row noGutters mb={3}>
-        <Col>
-          <Input
-            ref={searchRef}
-            placeholder="Search folder/file by name..."
-            onChange={(input) => searchData(input.target.value)}
-          />
-        </Col>
-      </Row>
-
-      <Box
-        display="flex"
-        flexWrap="wrap"
-        flexDirection="row"
-        className="custom-scroll">
-        {/* Here should be list of data Images/Video */}
-        {currentData?.map((item, index) => (
-          <Box pr={3} pb={3} key={index}>
-            <FormSimpleView
-              id={item?.id}
-              key={item?.id}
-              title={item?.title}
-              imageURL={item?.image}
-              subtitle={item?.subtitle}
-            />
-          </Box>
-        ))}
-        <Box
-          {...styles.addNewItemStyles}
-          style={globalStyles.cursorPointer}
-          onClick={showModal}>
-          <PlusOutlined />
-        </Box>
-
-        {/*<FormSimpleFormWithModal*/}
-        {/*  isModalVisible={isModalVisible}*/}
-        {/*  setIsModalVisible={setIsModalVisible}*/}
-        {/*  onModalSubmit={onFormCreate}*/}
-        {/*/>*/}
-      </Box>
-    </Box>
+  return (<>div</>
+    // <Box flexDirection="column" px={45} py={4} minHeight="100%">
+    //   {/* Page Header */}
+    //   <Row noGutters display="flex">
+    //     <Col cw="auto" p={0} v="center">
+    //       <Button
+    //         size="small"
+    //         type="text"
+    //         style={globalStyles.resetPadding}
+    //         icon={<ArrowLeftOutlined style={globalStyles.iconSize} />}
+    //         onClick={() => history.goBack()}
+    //       />
+    //     </Col>
+    //     <Col cw="auto" p={0} v="center">
+    //       <Divider type="vertical" />
+    //     </Col>
+    //     <Col p={0} v="center">
+    //       <Breadcrumb>
+    //         <Breadcrumb.Item>
+    //           <FolderOutlined />
+    //           <Text>Folder</Text>
+    //         </Breadcrumb.Item>
+    //         <Breadcrumb.Item overlay={menu}>
+    //           <Text>Forms</Text>
+    //         </Breadcrumb.Item>
+    //       </Breadcrumb>
+    //     </Col>
+    //   </Row>
+    //   {/* SecondaryTitle */}
+    //   <Row noGutters v="center" mb={1} mt={3}>
+    //     <Col>
+    //       <Title level={2} style={globalStyles.resetMargin}>
+    //         Forms
+    //       </Title>
+    //     </Col>
+    //   </Row>
+    //   <Row noGutters mb={3}>
+    //     <Col>
+    //       <Text>You have {amountFiles} files.</Text>
+    //     </Col>
+    //   </Row>
+    //
+    //   <Row noGutters mb={3}>
+    //     <Col>
+    //       <Input
+    //         ref={searchRef}
+    //         placeholder="Search folder/file by name..."
+    //         onChange={(input) => searchData(input.target.value)}
+    //       />
+    //     </Col>
+    //   </Row>
+    //
+    //   <Box
+    //     display="flex"
+    //     flexWrap="wrap"
+    //     flexDirection="row"
+    //     className="custom-scroll">
+    //     {/* Here should be list of data Images/Video */}
+    //     {currentData?.map((item, index) => (
+    //       <Box pr={3} pb={3} key={index}>
+    //         {/*<FormSimpleView*/}
+    //         {/*  id={item?.id}*/}
+    //         {/*  key={item?.id}*/}
+    //         {/*  title={item?.title}*/}
+    //         {/*  imageURL={item?.image}*/}
+    //         {/*  subtitle={item?.subtitle}*/}
+    //         {/*/>*/}
+    //       </Box>
+    //     ))}
+    //     <Box
+    //       {...styles.addNewItemStyles}
+    //       style={globalStyles.cursorPointer}
+    //       onClick={showModal}>
+    //       <PlusOutlined />
+    //     </Box>
+    //
+    //     {/*<FormSimpleFormWithModal*/}
+    //     {/*  isModalVisible={isModalVisible}*/}
+    //     {/*  setIsModalVisible={setIsModalVisible}*/}
+    //     {/*  onModalSubmit={onFormCreate}*/}
+    //     {/*/>*/}
+    //   </Box>
+    // </Box>
   )
 }
 
