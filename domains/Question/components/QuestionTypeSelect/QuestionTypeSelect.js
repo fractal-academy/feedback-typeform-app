@@ -81,7 +81,7 @@ function QuestionTypeSelect(props) {
     <Row h="center" v={'center'} pl={2} pr={0} noGutters>
       <Col>
         <Menu style={styles.menuStyle}>
-          {questionTypeMap.map((item, index) => (
+          {questionTypeMap.map((item) => (
             <Menu.Item
               style={styles.menuItemStyle}
               key={item.type}

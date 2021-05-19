@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types'
-import { globalStyles } from 'app/styles'
 import { Box, Col, Row } from '@qonsoll/react-design'
 import { QuestionSelect } from 'domains/Question/components'
 import { Button, DatePicker, Select, Typography } from 'antd'
-import { DATE_CONDITION_RULES_VALUES } from 'app/constants/dateConditionRules'
-import { styles } from 'domains/Condition/components/ConditionTemplates/PlainShortTextStringTemplate/PlainShortTextStringTemplate.style'
+import { DATE_CONDITION_RULES_VALUES } from '../../../../../constants/dateConditionRules'
+import { styles } from '../PlainShortTextStringTemplate/PlainShortTextStringTemplate.style'
 
 const { Option } = Select
 const { Text } = Typography

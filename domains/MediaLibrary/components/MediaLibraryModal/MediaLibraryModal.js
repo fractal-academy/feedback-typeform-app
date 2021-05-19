@@ -10,7 +10,7 @@ import {
 } from 'antd'
 import { Row, Col, Box } from '@qonsoll/react-design'
 import { FilterOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons'
-import { globalStyles } from 'app/styles'
+import { globalStyles } from '../../../../styles/index'
 import { styles } from './MediaLibraryModal.styles'
 import PropTypes from 'prop-types'
 import './MediaLibraryModal.styles.css'
@@ -21,9 +21,9 @@ import {
 import firebase, { firestore } from 'app/services/Firebase'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { getCollectionRef, setData } from 'app/services/Firestore'
-import COLLECTIONS from 'app/constants/collection'
+import COLLECTIONS from '../../../../constants/collection'
 import Fuse from 'fuse.js'
-import theme from 'app/styles/theme'
+import theme from '../../../../styles/theme'
 
 const { Title, Text } = Typography
 
@@ -86,7 +86,7 @@ function MediaLibraryModal(props) {
     const image = ref.put(data.file)
     image.on(
       'state_changed',
-      (snapshot) => {},
+      () => {},
       (error) => {
         // Handle error during the upload
         message.error(error.message)
@@ -134,6 +134,7 @@ function MediaLibraryModal(props) {
       // [FINAL CLEAN UP]
       isComponentMounted = false
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [media])
   return (
     <>
@@ -153,7 +154,7 @@ function MediaLibraryModal(props) {
               <Col>
                 <Title
                   level={3}
-                  style={(styles.boldFont, globalStyles.resetMargin)}>
+                  style={{ ...styles.boldFont, ...globalStyles.resetMargin }}>
                   Media Library
                 </Title>
               </Col>
@@ -261,7 +262,7 @@ function MediaLibraryModal(props) {
                 </Box>
               </Upload>
             </Box>
-            <Row borderBottom="1px solid #d9d9d9"></Row>
+            <Row borderBottom="1px solid #d9d9d9" />
             <Row noGutters h="right" p={3} bg="#fff">
               <Col cw="auto">
                 <Button

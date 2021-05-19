@@ -4,13 +4,8 @@ import Title from 'antd/lib/typography/Title'
 import { FormSimpleForm } from 'domains/Form/components'
 
 const FormSimpleFormWithModal = (props) => {
-  const {
-    formData,
-    isModalVisible,
-    setIsModalVisible,
-    onModalSubmit,
-    isEdit
-  } = props
+  const { formData, isModalVisible, setIsModalVisible, onModalSubmit, isEdit } =
+    props
 
   // [STATE]
   const [loading, setLoading] = useState(false)

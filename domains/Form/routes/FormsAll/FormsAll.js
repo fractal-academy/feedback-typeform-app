@@ -32,7 +32,7 @@ const mockRoutes = [
   { path: '/images', page: 'Images' },
   { path: '/videos', page: 'Videos' }
 ]
-function FormsAll(props) {
+function FormsAll() {
   // [ADDITIONAL HOOKS]
   const searchRef = useRef()
   const history = useHistory()
