@@ -12,7 +12,6 @@ import { PlaneTextDateTemplate } from 'domains/Condition/components/ConditionTem
 import { PictureChoiceTemplate } from 'domains/Condition/components/ConditionTemplates'
 import { PlaneLongTextStringTemplate } from 'domains/Condition/components/ConditionTemplates'
 import { PlaneShortTextStringTemplate } from 'domains/Condition/components/ConditionTemplates'
-import theme from 'app/styles/theme'
 
 const questionTypesMap = {
   [QUESTION_TYPES.YES_NO]: {

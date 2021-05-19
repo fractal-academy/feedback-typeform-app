@@ -37,7 +37,8 @@ function KeyBox(props) {
               <img
                 alt=""
                 className="imageContainer"
-                src={item?.choice?.image}></img>
+                src={item?.choice?.image}
+              />
             </Col>
           </Row>
         )}

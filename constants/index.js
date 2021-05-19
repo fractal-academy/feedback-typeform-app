@@ -1,4 +1,3 @@
-import FIREBASE_CONFIG from './firebaseConfig'
 import LAYOUT_TYPES from './layoutTypes'
 import QUESTION_TYPES from './quetstionType'
 import ANSWER_TYPES from './answerType'
@@ -10,7 +9,6 @@ import COLLECTIONS from './collection'
 import DEFAULT_IMAGE from './defaultImage'
 
 export {
-  FIREBASE_CONFIG,
   LAYOUT_TYPES,
   QUESTION_TYPES,
   ANSWER_TYPES,

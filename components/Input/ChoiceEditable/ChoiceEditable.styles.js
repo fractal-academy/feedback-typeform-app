@@ -1,10 +1,9 @@
 import { Box } from '@qonsoll/react-design'
-import { Typography, Input } from 'antd'
-import theme from 'app/styles/theme'
+import { Input } from 'antd'
+import theme from '../../../styles/theme'
 import styled from 'styled-components'
 
 const { TextArea } = Input
-const { Text } = Typography
 
 export const styles = {
   MediaBox: {

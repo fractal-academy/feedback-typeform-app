@@ -3,7 +3,7 @@ import { InputNumber, Slider } from 'antd'
 import { styles } from './RangeSlider.styles'
 import { Col, Row } from '@qonsoll/react-design'
 
-function RangeSlider(props) {
+function RangeSlider() {
   // [COMPONENT STATE HOOKS]
   const [inputValue, setInputValue] = useState(0)
 

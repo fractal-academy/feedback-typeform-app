@@ -4,9 +4,9 @@ import { Col, Row } from '@qonsoll/react-design'
 import { sortableElement } from 'react-sortable-hoc'
 
 const StyledColumn = styled(Col)`
-  cursor: pointer,
-  pointer-ivents: none,
-  position: relative
+  cursor: pointer;
+  pointer-events: none;
+  position: relative;
 `
 
 const SortableItem = sortableElement(({ children }) => (

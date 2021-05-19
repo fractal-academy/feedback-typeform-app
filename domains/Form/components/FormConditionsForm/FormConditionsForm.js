@@ -77,7 +77,7 @@ const mockQuestion = [
   }
 ]
 
-function FormConditionsForm(props) {
+function FormConditionsForm() {
   // [CLEAN FUNCTIONS]
   const [questionsData, setQuestionsData] = useState(mockQuestion)
   const getQuestionListRedirect = (itemIndex) => {

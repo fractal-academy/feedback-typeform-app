@@ -4,7 +4,7 @@ const DateTimeInput = (props) => {
   const { onClick } = props
 
   // [CLEAN FUNCTIONS]
-  const onChange = (date) => {
+  const onChange = () => {
     onClick && onClick()
   }
 

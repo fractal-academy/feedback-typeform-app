@@ -26,12 +26,14 @@ function DragableList(props) {
   }
 
   // [COMPUTED PROPERTIES]
-  const Container = useMemo(() => (sortable ? SortableContainer : Box), [
-    sortable
-  ])
-  const SortableWrapper = useMemo(() => (sortable ? SortableItem : Box), [
-    sortable
-  ])
+  const Container = useMemo(
+    () => (sortable ? SortableContainer : Box),
+    [sortable]
+  )
+  const SortableWrapper = useMemo(
+    () => (sortable ? SortableItem : Box),
+    [sortable]
+  )
 
   // [USE_EFFECTS]
   useEffect(() => {
