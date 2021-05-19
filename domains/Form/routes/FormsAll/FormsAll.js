@@ -16,14 +16,14 @@ import {
   PlusOutlined
 } from '@ant-design/icons'
 import { Spinner } from 'components'
-import { firestore } from 'app/services'
-import { useHistory } from 'react-router'
-import { globalStyles } from 'app/styles'
+// import { firestore } from '../../../../app/services'
+import { useHistory } from 'react-router-dom'
+import { globalStyles } from '../../../../styles'
 import { styles } from './FormsAll.style'
-import COLLECTIONS from 'app/constants/collection'
+import COLLECTIONS from '../../../../constants/collection'
 import { FormSimpleView } from 'domains/Form/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
-import { getCollectionRef, getTimestamp, setData } from 'app/services/Firestore'
+// import { getCollectionRef, getTimestamp, setData } from 'app/services/Firestore'
 import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
 
 const { Title, Text } = Typography
@@ -33,6 +33,7 @@ const mockRoutes = [
   { path: '/videos', page: 'Videos' }
 ]
 function FormsAll(props) {
+  const {firestore,getCollectionRef,getTimestamp,setData}=props
   // [ADDITIONAL HOOKS]
   const searchRef = useRef()
   const history = useHistory()
