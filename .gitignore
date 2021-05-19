@@ -28,8 +28,9 @@ yarn-error.log*
 
 #files
 .eslintcache
+.eslintrc.js
 package-lock.json
-
+yarn.lock
 #folders
 /.vscode
 /.idea
