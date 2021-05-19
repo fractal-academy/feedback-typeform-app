@@ -15,16 +15,16 @@ import {
   FolderOutlined,
   PlusOutlined
 } from '@ant-design/icons'
-import { Spinner } from 'components'
+import { Spinner } from '../../../../components'
 // import { firestore } from '../../../../app/services'
 import { useHistory } from 'react-router-dom'
 import { globalStyles } from '../../../../styles'
 import { styles } from './FormsAll.style'
 import COLLECTIONS from '../../../../constants/collection'
-import { FormSimpleView } from 'domains/Form/components'
+import { FormSimpleView } from '../../../../domains/Form/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 // import { getCollectionRef, getTimestamp, setData } from 'app/services/Firestore'
-import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
+// import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
 
 const { Title, Text } = Typography
 const mockRoutes = [
@@ -164,11 +164,11 @@ function FormsAll(props) {
           <PlusOutlined />
         </Box>
 
-        <FormSimpleFormWithModal
-          isModalVisible={isModalVisible}
-          setIsModalVisible={setIsModalVisible}
-          onModalSubmit={onFormCreate}
-        />
+        {/*<FormSimpleFormWithModal*/}
+        {/*  isModalVisible={isModalVisible}*/}
+        {/*  setIsModalVisible={setIsModalVisible}*/}
+        {/*  onModalSubmit={onFormCreate}*/}
+        {/*/>*/}
       </Box>
     </Box>
   )
