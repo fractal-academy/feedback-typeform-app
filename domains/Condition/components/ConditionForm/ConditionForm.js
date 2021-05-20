@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import React,{ cloneElement } from 'react'
 import { Box } from '@qonsoll/react-design'
 import Title from 'antd/lib/typography/Title'
-import { QUESTION_TYPES } from '../../../constants'
+import { QUESTION_TYPES } from '../../../../constants'
 import { 
   RatingTemplate,  
   FileUploadTemplate, 
