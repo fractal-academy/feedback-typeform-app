@@ -1,12 +1,13 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import { ChoiceEditable } from 'components'
+import { ChoiceEditable } from '../../../components'
 import { Box } from '@qonsoll/react-design'
 import { PlusOutlined } from '@ant-design/icons'
 import {
   DISPATCH_EVENTS,
   useCurrentQuestionContext,
   useCurrentQuestionContextDispatch
-} from 'app/context/CurrentQuestion'
+} from '../../../context/CurrentQuestion'
 import { styles } from './ChoiceEditableGroup.styles'
 
 function ChoiceEditableGroup(props) {

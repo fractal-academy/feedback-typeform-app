@@ -1,5 +1,5 @@
-import theme from 'app/styles/theme'
-import { globalStyles } from 'app/styles'
+import theme from '../../../styles/theme'
+import { globalStyles } from '../../../styles'
 
 export const styles = {
   mainBox: {

@@ -1,9 +1,10 @@
+import React from 'react'
 import { Button } from 'antd'
 import PropTypes from 'prop-types'
 import Text from 'antd/lib/typography/Text'
 import { styles } from './RatingTemplate.styles'
 import { Box, Col, Row } from '@qonsoll/react-design'
-import { QuestionSelect } from 'domains/Question/components'
+import { QuestionSelect } from '../../../../../domains/Question/components'
 
 let startLetter = 65
 

@@ -4,7 +4,7 @@ import { useHover } from '@umijs/hooks'
 import { Button } from 'antd'
 import { CheckOutlined } from '@ant-design/icons'
 import { Row, Col, Box } from '@qonsoll/react-design'
-
+import React from 'react'
 function KeyBox(props) {
   const { onButtonClick, item, isActive, hasImages } = props
   const { letter } = item || {}

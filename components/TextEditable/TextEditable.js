@@ -1,3 +1,4 @@
+import React from 'react'
 import { Input } from 'antd'
 import PropTypes from 'prop-types'
 import { styles } from './TextEditable.styles'

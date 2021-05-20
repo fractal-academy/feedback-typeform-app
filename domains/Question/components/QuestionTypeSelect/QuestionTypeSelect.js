@@ -1,7 +1,8 @@
+import React from 'react'
 import { Menu } from 'antd'
 import PropTypes from 'prop-types'
 import Text from 'antd/lib/typography/Text'
-import { QUESTION_TYPES } from 'app/constants'
+import { QUESTION_TYPES } from '../../../../constants'
 import { Col, Row } from '@qonsoll/react-design'
 import { styles } from './QuestionTypeSelect.styles'
 import {

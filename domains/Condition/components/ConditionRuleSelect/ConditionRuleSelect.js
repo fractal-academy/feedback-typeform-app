@@ -1,7 +1,8 @@
+import React from 'react'
 import { Select } from 'antd'
 import { Col, Row } from '@qonsoll/react-design'
-import { DATE_CONDITION_RULES_VALUES } from 'app/constants/dateConditionRules'
-import { TEXT_CONDITION_RULES_VALUES } from 'app/constants/planeTextStringConditionRules'
+import { DATE_CONDITION_RULES_VALUES } from '../../../../constants/dateConditionRules'
+import { TEXT_CONDITION_RULES_VALUES } from '../../../../constants/planeTextStringConditionRules'
 
 const Option = Select
 

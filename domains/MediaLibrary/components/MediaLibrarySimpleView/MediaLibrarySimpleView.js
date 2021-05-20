@@ -1,14 +1,15 @@
+import React from 'react'
 import { Box, Col, Row } from '@qonsoll/react-design'
 import { Typography } from 'antd'
 import { EditOutlined } from '@ant-design/icons'
 import { styles } from './MediaLibrarySimpleView.styles'
-import { MediaLibraryModal } from 'domains/MediaLibrary/components'
+import { MediaLibraryModal } from '../../../../domains/MediaLibrary/components'
 import { Input } from 'antd'
-import RangeSlider from 'components/RangeSlider'
+import RangeSlider from '../../../../components/RangeSlider'
 import {
   useCurrentQuestionContextDispatch,
   DISPATCH_EVENTS
-} from 'app/context/CurrentQuestion'
+} from '../../../../context/CurrentQuestion'
 import PropTypes from 'prop-types'
 
 const { Text } = Typography

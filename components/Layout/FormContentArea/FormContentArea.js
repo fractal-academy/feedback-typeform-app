@@ -3,7 +3,7 @@ import { Button } from 'antd'
 import './FormContentArea.styles.css'
 import PropTypes from 'prop-types'
 import MiddleContainer from '../MiddleContainer'
-import { ROUTES_PATHS } from 'app/constants'
+import { ROUTES_PATHS } from '../../../constants'
 import { useHistory } from 'react-router'
 
 function FormContentArea(props) {

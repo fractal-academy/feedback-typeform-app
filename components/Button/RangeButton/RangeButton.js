@@ -1,10 +1,9 @@
 import { Button } from 'antd'
 import '../Button.styles.css'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useKeyPress } from '@umijs/hooks'
 import { Box } from '@qonsoll/react-design'
-
 function RangeButton(props) {
   const { from = 0, to = 0, onClick, currentSlide, order } = props
 

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Rate } from 'antd'
 import styled from 'styled-components'
 import { Col, Container, Row } from '@qonsoll/react-design'

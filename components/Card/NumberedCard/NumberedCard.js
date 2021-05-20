@@ -1,7 +1,8 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Box } from '@qonsoll/react-design'
-import theme from 'app/styles/theme'
+import theme from '../../../styles'
 
 const HiddenBox = styled(Box)`
   position: absolute;

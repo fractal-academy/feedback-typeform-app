@@ -1,7 +1,8 @@
+import React from 'react'
 import { Upload } from 'antd'
 import { Text } from 'antd-styled'
-import { IconLabel } from 'components'
-import { globalStyles } from 'app/styles'
+import { IconLabel } from '../../../components'
+import { globalStyles } from '../../../styles'
 import { Col, Row } from '@qonsoll/react-design'
 import { InboxOutlined } from '@ant-design/icons'
 

@@ -1,4 +1,4 @@
-import theme from 'app/styles/theme'
+import theme from '../../../../styles/theme'
 
 export const styles = {
   menuItemStyle: {

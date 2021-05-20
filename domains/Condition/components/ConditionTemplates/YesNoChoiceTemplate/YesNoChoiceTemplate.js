@@ -1,10 +1,10 @@
-import { Button } from 'antd'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Text from 'antd/lib/typography/Text'
 import { styles } from './YesNoChoiceTemplate.styles'
 import { Box, Col, Row } from '@qonsoll/react-design'
-import { QuestionSelect } from 'domains/Question/components'
-import theme from 'app/styles/theme'
+import { QuestionSelect } from '../../../../../domains/Question/components'
+import theme from '../../../../../styles/theme'
 
 function YesNoChoiceTemplate(props) {
   const { answers, questionList, addRedirectQuestion } = props

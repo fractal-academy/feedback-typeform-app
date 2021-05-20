@@ -1,5 +1,6 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import { Carousel } from 'app/components'
+import { Carousel } from '../../../../components'
 
 function FormAdvancedView(props) {
   const { children, isAnswered, setIsAnswered, setCurrentSlide } = props

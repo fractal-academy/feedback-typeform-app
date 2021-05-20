@@ -1,9 +1,10 @@
+import React from 'react'
 import { Button } from 'antd'
 import PropTypes from 'prop-types'
 import Text from 'antd/lib/typography/Text'
 import { Box, Col, Row } from '@qonsoll/react-design'
 import { styles } from './OpinionScaleTemplate.styles'
-import { QuestionSelect } from 'domains/Question/components'
+import { QuestionSelect } from '../../../../../domains/Question/components'
 
 let startLetter = 65
 function OpinionScaleTemplate(props) {

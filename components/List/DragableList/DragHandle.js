@@ -1,3 +1,4 @@
+import React from 'react'
 import styled from 'styled-components'
 import { Box } from '@qonsoll/react-design'
 import { MoreOutlined } from '@ant-design/icons'

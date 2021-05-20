@@ -1,9 +1,9 @@
-import { useMemo } from 'react'
+import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
-import { COLLECTIONS } from 'app/constants'
-import { DragableList } from 'app/components'
-import { setData } from 'app/services/Firestore'
-import { QuestionSimpleView } from 'domains/Question/components'
+import { COLLECTIONS } from '../../../../constants'
+import { DragableList } from '../../../../components'
+import { setData } from '../../../../services/Firestore'
+import { QuestionSimpleView } from '../../../../domains/Question/components'
 import { message } from 'antd'
 function QuestionsList(props) {
   const { data, setNewOrder, onItemClick } = props

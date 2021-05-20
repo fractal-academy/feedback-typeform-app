@@ -1,3 +1,4 @@
+import React from 'react'
 import {
   PicCenterOutlined,
   PicRightOutlined,
@@ -9,7 +10,7 @@ import {
 import { Menu } from 'antd'
 import PropTypes from 'prop-types'
 import { styles } from './QuestionLayoutSwitcher.styles'
-import { LAYOUT_TYPE_KEYS } from 'app/constants/layoutTypes'
+import { LAYOUT_TYPE_KEYS } from '../../../../constants/layoutTypes'
 
 const menuMap = [
   { icon: <AlignLeftOutlined />, layoutType: LAYOUT_TYPE_KEYS[0] },

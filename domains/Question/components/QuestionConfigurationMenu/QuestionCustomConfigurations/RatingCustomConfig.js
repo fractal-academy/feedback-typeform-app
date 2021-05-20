@@ -3,7 +3,7 @@ import { Row, Col } from '@qonsoll/react-design'
 import {
   DISPATCH_EVENTS,
   useCurrentQuestionContextDispatch
-} from 'app/context/CurrentQuestion'
+} from '../../../../../context/CurrentQuestion'
 
 const { Text } = Typography
 const { Option } = Select

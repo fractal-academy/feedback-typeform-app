@@ -1,3 +1,4 @@
+import React from 'react'
 import { Input } from 'antd'
 import PropTypes from 'prop-types'
 import { styles } from './TextArea.styles'

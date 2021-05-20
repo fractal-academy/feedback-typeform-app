@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { InputNumber, Slider } from 'antd'
 import { styles } from './RangeSlider.styles'
 import { Col, Row } from '@qonsoll/react-design'

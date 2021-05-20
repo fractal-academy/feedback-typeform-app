@@ -1,4 +1,4 @@
-import { FormEdit, FormsAll, FormShow } from 'domains/Form/routes'
+import { FormEdit, FormsAll, FormShow } from '../domains/Form/routes'
 import ROUTES_PATHS from './routesPaths'
 
 const ROUTES = {

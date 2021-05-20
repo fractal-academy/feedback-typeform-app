@@ -1,3 +1,4 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import { CheckOutlined } from '@ant-design/icons'
 import { Box, Col, Row } from '@qonsoll/react-design'

@@ -1,14 +1,15 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import { ROUTES_PATHS } from 'app/constants'
+import { ROUTES_PATHS } from '../../../../constants'
 import { useState, cloneElement } from 'react'
 import { styles } from './FormSimpleView.style'
-import COLLECTIONS from 'app/constants/collection'
+import COLLECTIONS from '../../../../constants/collection'
 import { Row, Col, Box } from '@qonsoll/react-design'
 import { generatePath, useHistory } from 'react-router-dom'
 import { FileOutlined, MoreOutlined } from '@ant-design/icons'
-import { deleteData, updateData } from 'app/services/Firestore'
+import { deleteData, updateData } from '../../../../services/Firestore'
 import { Card, Typography, Dropdown, Menu, Popconfirm, message } from 'antd'
-import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
+import FormSimpleFormWithModal from '../../../../domains/Form/components/FormSimpleFormWithModal'
 
 const { Meta } = Card
 const { Text } = Typography

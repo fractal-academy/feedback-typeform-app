@@ -1,6 +1,7 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Box, Col, Row } from '@qonsoll/react-design'
-import { QuestionSelect } from 'domains/Question/components'
+import { QuestionSelect } from '../../../../../domains/Question/components'
 import { Button, DatePicker, Select, Typography } from 'antd'
 import { DATE_CONDITION_RULES_VALUES } from '../../../../../constants/dateConditionRules'
 import { styles } from '../PlainShortTextStringTemplate/PlainShortTextStringTemplate.style'

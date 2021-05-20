@@ -1,11 +1,12 @@
+import React from 'react'
 import { Typography, Switch } from 'antd'
 import { Row, Col, Box } from '@qonsoll/react-design'
-import { QUESTION_TYPES } from 'app/constants'
+import { QUESTION_TYPES } from '../../../../constants'
 import {
   DISPATCH_EVENTS,
   useCurrentQuestionContext,
   useCurrentQuestionContextDispatch
-} from 'app/context/CurrentQuestion'
+} from '../../../../context/CurrentQuestion'
 import {
   OpinionScaleCustomConfig,
   RatingCustomConfig

@@ -1,3 +1,4 @@
+import React from 'react'
 import { Box } from '@qonsoll/react-design'
 import { sortableContainer } from 'react-sortable-hoc'
 

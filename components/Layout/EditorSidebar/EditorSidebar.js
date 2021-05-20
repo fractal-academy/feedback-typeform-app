@@ -9,19 +9,19 @@ import {
   SettingOutlined
 } from '@ant-design/icons'
 import { styles } from './EditorSidebar.styles'
-import { globalStyles } from 'app/styles'
+import { globalStyles } from '../../../styles'
 import PropTypes from 'prop-types'
-import { QuestionTypeSelect, QuestionsList } from 'domains/Question/components'
-import FormConditionsForm from 'domains/Form/components/FormConditionsForm'
-import { ModalWithFormConditionsForm } from 'domains/Condition/components'
-import { LAYOUT_TYPE_KEYS } from 'app/constants/layoutTypes'
-import { QUESTION_TYPES, COLLECTIONS } from 'app/constants'
-import { getCollectionRef, setData } from 'app/services/Firestore'
+import { QuestionTypeSelect, QuestionsList } from '../../../domains/Question/components'
+import FormConditionsForm from '../../../domains/Form/components/FormConditionsForm'
+import { ModalWithFormConditionsForm } from '../../../domains/Condition/components'
+import { LAYOUT_TYPE_KEYS } from '../../../constants/layoutTypes'
+import { QUESTION_TYPES, COLLECTIONS } from '../../../constants'
+import { getCollectionRef, setData } from '../../../services/Firestore'
 import { useParams } from 'react-router'
 import {
   useCurrentQuestionContextDispatch,
   DISPATCH_EVENTS
-} from 'app/context/CurrentQuestion'
+} from '../../../context/CurrentQuestion'
 
 const { Title } = Typography
 

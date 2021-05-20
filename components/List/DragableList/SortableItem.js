@@ -1,3 +1,4 @@
+import React from 'react'
 import DragHandle from './DragHandle'
 import styled from 'styled-components'
 import { Col, Row } from '@qonsoll/react-design'

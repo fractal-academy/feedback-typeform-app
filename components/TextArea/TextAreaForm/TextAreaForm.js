@@ -1,6 +1,7 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import { Form, Typography } from 'antd'
-import { TextArea, SubmitButton } from 'components'
+import { TextArea, SubmitButton } from '../../../components'
 import { Col, Container, Row } from '@qonsoll/react-design'
 
 function TextAreaForm(props) {

@@ -1,11 +1,12 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import { globalStyles } from 'app/styles'
+import { globalStyles } from '../../../../../styles/theme'
 import Text from 'antd/lib/typography/Text'
 import { Button, Input, Select } from 'antd'
 import { Box, Col, Row } from '@qonsoll/react-design'
 import { styles } from './PlainLongTextStringTemplate.style'
-import { QuestionSelect } from 'domains/Question/components'
-import { TEXT_CONDITION_RULES_VALUES } from 'app/constants/planeTextStringConditionRules'
+import { QuestionSelect } from '../../../../../domains/Question/components'
+import { TEXT_CONDITION_RULES_VALUES } from '../../../../../constants/planeTextStringConditionRules'
 
 const { Option } = Select
 

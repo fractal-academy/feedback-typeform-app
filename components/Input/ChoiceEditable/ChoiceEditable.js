@@ -1,21 +1,22 @@
+import React from 'react'
 import { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
-import theme from 'app/styles/theme'
+import theme from '../../../styles/theme'
 import {
   styles,
   LetterBox,
   DeleteButton,
   ChoiceInput
 } from './ChoiceEditable.styles'
-import { DEFAULT_IMAGE } from 'app/constants'
+import { DEFAULT_IMAGE } from '../../../constants'
 import { Row, Col, Box } from '@qonsoll/react-design'
 import { CloseOutlined, EditOutlined } from '@ant-design/icons'
-import { MediaLibraryModal } from 'domains/MediaLibrary/components'
+import { MediaLibraryModal } from '../../../domains/MediaLibrary/components'
 import {
   DISPATCH_EVENTS,
   useCurrentQuestionContext,
   useCurrentQuestionContextDispatch
-} from 'app/context/CurrentQuestion'
+} from '../../../context/CurrentQuestion'
 
 let startLetter = 65
 

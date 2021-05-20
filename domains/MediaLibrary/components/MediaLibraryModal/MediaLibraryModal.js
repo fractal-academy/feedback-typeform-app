@@ -10,17 +10,17 @@ import {
 } from 'antd'
 import { Row, Col, Box } from '@qonsoll/react-design'
 import { FilterOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons'
-import { globalStyles } from '../../../../styles/index'
+import { globalStyles } from '../../../../styles'
 import { styles } from './MediaLibraryModal.styles'
 import PropTypes from 'prop-types'
 import './MediaLibraryModal.styles.css'
 import {
   MediaLibraryFilter,
   MediaLibraryItemSimpleView
-} from 'domains/MediaLibrary/components'
-import firebase, { firestore } from 'app/services/Firebase'
+} from '../../../../domains/MediaLibrary/components'
+import firebase, { firestore } from '../../../../services/Firebase'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
-import { getCollectionRef, setData } from 'app/services/Firestore'
+import { getCollectionRef, setData } from '../../../../services/Firestore'
 import COLLECTIONS from '../../../../constants/collection'
 import Fuse from 'fuse.js'
 import theme from '../../../../styles/theme'

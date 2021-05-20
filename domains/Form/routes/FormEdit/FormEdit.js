@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { PageLayout, EditorSidebar, FormContentArea, Spinner } from 'components'
+import { PageLayout, EditorSidebar, FormContentArea, Spinner } from '../../../../constants'
 import { useParams } from 'react-router-dom'
 import { Box } from '@qonsoll/react-design'
 import {
   QuestionForm,
   QuestionLayoutSwitcher
-} from 'domains/Question/components'
-// import { getCollectionRef, setData } from 'app/services/Firestore'
+} from '../../../../domains/Question/components'
+// import { getCollectionRef, setData } from '../../../../services/Firestore'
 import { QUESTION_TYPES, COLLECTIONS, DEFAULT_IMAGE } from '../../../../constants'
 import {
   useCurrentQuestionContext,

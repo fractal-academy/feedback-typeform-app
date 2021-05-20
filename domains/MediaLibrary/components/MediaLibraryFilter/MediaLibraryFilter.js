@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import React,{ useState } from 'react'
 import PropTypes from 'prop-types'
-import { globalStyles } from 'app/styles'
+import { globalStyles } from '../../../../styles'
 import { ReloadOutlined } from '@ant-design/icons'
 import { styles } from './MediaLibraryFilter.styles'
 import { Row, Col, Box } from '@qonsoll/react-design'

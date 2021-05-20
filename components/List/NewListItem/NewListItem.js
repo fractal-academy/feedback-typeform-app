@@ -1,5 +1,6 @@
+import React from 'react'
 import PropTypes from 'prop-types'
-import { globalStyles } from 'app/styles'
+import { globalStyles } from '../../../styles'
 import { Box } from '@qonsoll/react-design'
 import { PlusOutlined } from '@ant-design/icons'
 

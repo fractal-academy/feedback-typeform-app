@@ -1,8 +1,9 @@
+import React from 'react'
 import { Form } from 'antd'
 import PropTypes from 'prop-types'
-import { globalStyles } from 'app/styles'
+import { globalStyles } from '../../../styles'
 import { ShortTextInput } from './ShortText.styles'
-import { SubmitButton } from 'components'
+import { SubmitButton } from '../../../components'
 import { Row, Col, Container } from '@qonsoll/react-design'
 
 function ShortText(props) {

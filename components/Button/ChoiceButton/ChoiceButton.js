@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import { KeyBox } from 'app/components'
-import { useMemo, useState } from 'react'
+import { KeyBox } from '../../../components'
+import React, { useMemo, useState } from 'react'
 import { useKeyPress } from '@umijs/hooks'
 import { Box } from '@qonsoll/react-design'
 

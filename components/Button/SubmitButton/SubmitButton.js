@@ -4,6 +4,7 @@ import { Typography } from 'antd'
 import PropTypes from 'prop-types'
 import { Row, Col } from '@qonsoll/react-design'
 import { CheckOutlined } from '@ant-design/icons'
+import React from 'react'
 
 const { Text } = Typography
 

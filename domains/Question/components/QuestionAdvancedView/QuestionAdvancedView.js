@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
-import { cloneElement } from 'react'
+import React, { cloneElement } from 'react'
 import { Typography, Button, Card } from 'antd'
-import { globalStyles } from 'app/styles'
+import { globalStyles } from '../../../../styles'
 import { Col, Row, Box } from '@qonsoll/react-design'
 import { styles } from './QuestionAdvancedView.styles'
-import { QUESTION_TYPES, LAYOUT_TYPES } from 'app/constants'
+import { QUESTION_TYPES, LAYOUT_TYPES } from '../../../../constants'
 import {
   Rate,
   ShortText,
@@ -15,7 +15,7 @@ import {
   TextAreaForm,
   DateTimeInput,
   SubmitButton
-} from 'components'
+} from '../../../../components'
 
 const { Title, Text } = Typography
 

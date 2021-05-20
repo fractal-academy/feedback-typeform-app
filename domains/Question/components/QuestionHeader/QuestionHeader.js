@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
-import { TextEditable } from 'components'
-import { useState, useEffect } from 'react'
+import { TextEditable } from '../../../../components'
+import React, { useState, useEffect } from 'react'
 import { Row, Col } from '@qonsoll/react-design'
 import {
   useCurrentQuestionContextDispatch,
   useCurrentQuestionContext,
   DISPATCH_EVENTS
-} from 'app/context/CurrentQuestion'
+} from '../../../../context/CurrentQuestion'
 
 function QuestionHeader(props) {
   const { titlePlaceholder, subtitlePlaceholder } = props

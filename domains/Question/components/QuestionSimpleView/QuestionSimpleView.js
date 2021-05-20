@@ -1,12 +1,12 @@
 import PropTypes from 'prop-types'
-import { cloneElement } from 'react'
+import React,{ cloneElement } from 'react'
 import './QuestionSimpleView.styles.css'
 import { Popconfirm, message } from 'antd'
-import { LAYOUT_TYPES } from 'app/constants'
-import { NumberedCard } from 'app/components'
+import { LAYOUT_TYPES } from '../../../../constants'
+import { NumberedCard } from '../../../../components'
 import { CloseOutlined } from '@ant-design/icons'
-import COLLECTIONS from 'app/constants/collection'
-import { deleteData } from 'app/services/Firestore'
+import COLLECTIONS from '../../../../constants/collection'
+import { deleteData } from '../../../../services/Firestore'
 import { Row, Col, Box } from '@qonsoll/react-design'
 
 function QuestionSimpleView(props) {
