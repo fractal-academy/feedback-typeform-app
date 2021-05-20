@@ -1,8 +1,7 @@
 import React from 'react'
 function FormsAll(props) {
 
-  return (<div>div</div>
-  )
+  return (<div>div</div>)
 }
 
 FormsAll.propTypes = {}
