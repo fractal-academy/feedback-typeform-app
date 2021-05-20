@@ -16,7 +16,6 @@ import FormConditionsForm from '../../../domains/Form/components/FormConditionsF
 import { ModalWithFormConditionsForm } from '../../../domains/Condition/components'
 import { LAYOUT_TYPE_KEYS } from '../../../constants/layoutTypes'
 import { QUESTION_TYPES, COLLECTIONS } from '../../../constants'
-import { getCollectionRef, setData } from '../../../services/Firestore'
 import { useParams } from 'react-router'
 import {
   useCurrentQuestionContextDispatch,
@@ -26,7 +25,7 @@ import {
 const { Title } = Typography
 
 function EditorSidebar(props) {
-  const { questions, endings } = props
+  const { questions, endings, getCollectionRef, setData } = props
 
   // [ADDITIONAL HOOKS]
   const { id } = useParams()
