@@ -24,6 +24,7 @@ import COLLECTIONS from '../../../../constants/collection'
 import { FormSimpleView } from '../../../../domains/Form/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import FormSimpleFormWithModal from '../../../../domains/Form/components/FormSimpleFormWithModal'
+import collection from "../../../../constants/collection";
 
 const { Title, Text } = Typography
 const mockRoutes = [
@@ -47,7 +48,7 @@ function FormsAll(props) {
   // [COMPUTED PROPERTIES]
   let amountFiles = data?.length
 
-  const formId = firestore.collection(COLLECTIONS.FORMS).doc().id
+  const formId = getCollectionRef(COLLECTIONS.FORMS).doc().id
   // [CLEAN FUNCTIONS]
   const searchData = () => {
     if (searchRef.current.input.value) {
