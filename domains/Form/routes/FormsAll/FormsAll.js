@@ -20,9 +20,9 @@ import { useHistory } from 'react-router-dom'
 import { globalStyles } from '../../../../styles'
 import { styles } from './FormsAll.style'
 import COLLECTIONS from '../../../../constants/collection'
-import { FormSimpleView } from 'domains/Form/components'
+import { FormSimpleView } from '../../../../domains/Form/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
-import FormSimpleFormWithModal from 'domains/Form/components/FormSimpleFormWithModal'
+import FormSimpleFormWithModal from '../../../../domains/Form/components/FormSimpleFormWithModal'
 
 const { Title, Text } = Typography
 const mockRoutes = [
