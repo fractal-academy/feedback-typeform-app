@@ -1,3 +1,4 @@
+import React from 'react'
 import Fuse from 'fuse.js'
 import { useState, useEffect, useRef } from 'react'
 import { Row, Col, Box } from '@qonsoll/react-design'
