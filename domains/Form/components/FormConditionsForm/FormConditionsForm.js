@@ -1,5 +1,5 @@
 import React,{ useState } from 'react'
-import { ConditionForm } from '../../../../../domains/Condition/components'
+import { ConditionForm } from '../../../../domains/Condition/components'
 import { QUESTION_TYPES, ANSWER_TYPES } from '../../../../constants'
 import { Box } from '@qonsoll/react-design'
 

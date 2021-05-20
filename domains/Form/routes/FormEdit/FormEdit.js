@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { PageLayout, EditorSidebar, FormContentArea, Spinner } from '../../../../constants'
+import { PageLayout, EditorSidebar, FormContentArea, Spinner } from '../../../../components'
 import { useParams } from 'react-router-dom'
 import { Box } from '@qonsoll/react-design'
 import {
