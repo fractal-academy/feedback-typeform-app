@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { styles } from './FormShow.style'
-import { globalStyles } from '../../../../styles/theme'
+import { globalStyles } from '../../../../styles'
 import { useKeyPress } from '@umijs/hooks'
 import { COLLECTIONS } from '../../../../constants'
 import { Button, Divider, Typography } from 'antd'

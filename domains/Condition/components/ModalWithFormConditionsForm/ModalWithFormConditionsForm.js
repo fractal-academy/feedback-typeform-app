@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import { globalStyles } from '../../../../styles/theme'
+import { globalStyles } from '../../../../styles'
 import { Modal, Button, Typography } from 'antd'
 import { Row, Col } from '@qonsoll/react-design'
 import { styles } from './ModalWithFormConditionsForm.styles'
