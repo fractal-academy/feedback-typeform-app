@@ -2,20 +2,20 @@ import React, { useMemo } from 'react'
 import PropTypes from 'prop-types'
 import { COLLECTIONS } from '../../../../constants'
 import { DragableList } from '../../../../components'
-import { setData } from '../../../../services/Firestore'
 import { QuestionSimpleView } from '../../../../domains/Question/components'
 import { message } from 'antd'
 function QuestionsList(props) {
-  const { data, setNewOrder, onItemClick } = props
+  const { data, setNewOrder, onItemClick, onQuestionListUpdate } = props
 
   // [CLEAN FUNCTIONS]
-  const onUpdate = (data) => {
-    data.forEach((item) =>
-      setData(COLLECTIONS.QUESTIONS, item?.id, {
-        order: item?.order
-      }).catch((e) => message.error(e.message))
-    )
-  }
+  // const onUpdate = (data) => {
+  //   data.forEach((item) =>
+  //    setData(COLLECTIONS.QUESTIONS, item?.id, {
+  //        order: item?.order
+  //      }).catch((e) => message.error(e.message))
+  //     onQuestionListUpdate?.(item)
+  //   )
+  // }
   const dataSource = useMemo(
     () => (data ? data.sort((a, b) => a.order - b.order) : []),
     [data]
@@ -24,7 +24,7 @@ function QuestionsList(props) {
     <DragableList
       itemLayout="horizontal"
       dataSource={dataSource}
-      onUpdate={onUpdate}
+      onUpdate={onQuestionListUpdate}
       setNewOrder={setNewOrder}
       renderItem={(item, index) => (
         <QuestionSimpleView

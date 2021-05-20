@@ -1,22 +1,22 @@
 import PropTypes from 'prop-types'
 import React,{ cloneElement } from 'react'
 import './QuestionSimpleView.styles.css'
-import { Popconfirm, message } from 'antd'
+import { Popconfirm,  } from 'antd'
 import { LAYOUT_TYPES } from '../../../../constants'
 import { NumberedCard } from '../../../../components'
 import { CloseOutlined } from '@ant-design/icons'
 import COLLECTIONS from '../../../../constants/collection'
-import { deleteData } from '../../../../services/Firestore'
 import { Row, Col, Box } from '@qonsoll/react-design'
 
 function QuestionSimpleView(props) {
-  const { title, number, layoutType, onClick, id } = props
+  const { title, number, layoutType, onClick, id, onDelete } = props
 
   // [CLEAN FUNCTIONS]
   const handleDelete = async () => {
-    await deleteData(COLLECTIONS.QUESTIONS, id).catch((e) =>
-      message.error(e.message)
-    )
+    onDelete?.(id)
+    // await deleteData(COLLECTIONS.QUESTIONS, id).catch((e) =>
+    //   message.error(e.message)
+    // )
   }
 
   return (
