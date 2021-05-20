@@ -15,7 +15,7 @@ import {
   FolderOutlined,
   PlusOutlined
 } from '@ant-design/icons'
-import { Spinner } from 'components'
+import { Spinner } from '../../../../components'
 import { useHistory } from 'react-router-dom'
 import { globalStyles } from '../../../../styles'
 import { styles } from './FormsAll.style'
