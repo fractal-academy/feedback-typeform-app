@@ -1,2 +1,2 @@
-import {QuestionLayoutSwitcher} from './domains/Question/components'
-export default QuestionLayoutSwitcher
+import {FormsAll} from './domains/Form/routes'
+export default FormsAll
