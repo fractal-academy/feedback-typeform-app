@@ -4,9 +4,8 @@ import { globalStyles } from '../../../../styles'
 import { useKeyPress } from '@umijs/hooks'
 import { COLLECTIONS } from '../../../../constants'
 import { Button, Divider, Typography } from 'antd'
-import { useHistory, useParams } from 'react-router'
+import { useHistory, useParams } from 'react-router-dom'
 import { Row, Col, Box } from '@qonsoll/react-design'
-import { getCollectionRef } from '../../../../services/Firestore'
 import { FormAdvancedView } from '../../../../domains/Form/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import { QuestionAdvancedView } from '../../../../domains/Question/components'
@@ -16,6 +15,7 @@ const { Title } = Typography
 
 function FormShow(props) {
   // [ADDITIONAL HOOKS]
+  const {getCollectionRef}=props
   const history = useHistory()
   const { id } = useParams()
   const [data] = useCollectionData(

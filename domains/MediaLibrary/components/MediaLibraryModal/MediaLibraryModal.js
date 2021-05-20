@@ -18,9 +18,7 @@ import {
   MediaLibraryFilter,
   MediaLibraryItemSimpleView
 } from '../../../../domains/MediaLibrary/components'
-import firebase, { firestore } from '../../../../services/Firebase'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
-import { getCollectionRef, setData } from '../../../../services/Firestore'
 import COLLECTIONS from '../../../../constants/collection'
 import Fuse from 'fuse.js'
 import theme from '../../../../styles/theme'
@@ -28,7 +26,7 @@ import theme from '../../../../styles/theme'
 const { Title, Text } = Typography
 
 function MediaLibraryModal(props) {
-  const { btnProps, onClick, onContinue } = props
+  const { btnProps, onClick, onContinue,firebase,firestore,getCollectionRef,setData } = props
 
   // [ADDITIONAL HOOKS]
   const [media = []] = useCollectionData(getCollectionRef(COLLECTIONS.MEDIA))

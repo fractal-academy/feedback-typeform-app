@@ -7,7 +7,6 @@ import COLLECTIONS from '../../../../constants/collection'
 import { Row, Col, Box } from '@qonsoll/react-design'
 import { generatePath, useHistory } from 'react-router-dom'
 import { FileOutlined, MoreOutlined } from '@ant-design/icons'
-import { deleteData, updateData } from '../../../../services/Firestore'
 import { Card, Typography, Dropdown, Menu, Popconfirm, message } from 'antd'
 import FormSimpleFormWithModal from '../../../../domains/Form/components/FormSimpleFormWithModal'
 
@@ -15,7 +14,7 @@ const { Meta } = Card
 const { Text } = Typography
 
 function FormSimpleView(props) {
-  const { title, subtitle, id } = props
+  const { title, subtitle, id, deleteData, updateData } = props
 
   // [ADDITIONAL HOOKS]
   const history = useHistory()
