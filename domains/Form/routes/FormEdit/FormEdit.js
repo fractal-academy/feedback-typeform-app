@@ -8,10 +8,10 @@ import {
 } from '../../../../domains/Question/components'
 // import { getCollectionRef, setData } from '../../../../services/Firestore'
 import { QUESTION_TYPES, COLLECTIONS, DEFAULT_IMAGE } from '../../../../constants'
-import {
+import CurrentQuestionContextProvider, {
   useCurrentQuestionContext,
   useCurrentQuestionContextDispatch,
-  DISPATCH_EVENTS
+  DISPATCH_EVENTS,
 } from '../../../../context/CurrentQuestion'
 import {
   useCollectionData,
@@ -21,22 +21,22 @@ import { message } from 'antd'
 function FormEdit(props) {
   const {getCollectionRef,setData}=props
   // [ADDITIONAL HOOKS]
-  const { id } = useParams()
+  // const { id } = useParams()
+  const tempId = 'yw6NsMeoP1SQIkXP3ai1'
   const [form, formLoading] = useDocumentData(
-    getCollectionRef(COLLECTIONS.FORMS).doc(id)
+    getCollectionRef(COLLECTIONS.FORMS).doc(tempId)
   )
+  console.log('form',form)
   const [questionsList, questionsListLoading] = useCollectionData(
-    getCollectionRef(COLLECTIONS.QUESTIONS).where('formId', '==', id)
+    getCollectionRef(COLLECTIONS.QUESTIONS)
   )
+  console.log('questionsList',questionsList)
   // [CUSTOM_HOOKS]
   const currentQuestion = useCurrentQuestionContext()
   const currentQuestionDispatch = useCurrentQuestionContextDispatch()
-
   //[COMPONENT STATE HOOKS]
   const [defaultTab, setDefaultTab] = useState(currentQuestion?.layoutType)
-
   // [COMPUTED PROPERTIES]
-
   // divide all tasks of current form into 2 groups
   let questions = [],
     endings = []
@@ -47,7 +47,6 @@ function FormEdit(props) {
         : endings.push(item)
     })
   }
-
   // [CLEAN FUNCTIONS]
   const onChangeMenuItem = ({ key }) => {
     currentQuestionDispatch({
@@ -67,22 +66,20 @@ function FormEdit(props) {
       payload: { questionType: key, btnProps }
     })
   }
-
   // [USE_EFFECTS]
-  useEffect(() => {
-    //set default active tab for questionLayout switcher every time when we change current question
-    setDefaultTab(currentQuestion?.layoutType)
-    //save data of current question to database, when it change
-    !!Object.keys(currentQuestion).length &&
-      setData(
-        COLLECTIONS.QUESTIONS,
-        currentQuestion?.id,
-        currentQuestion
-      ).catch((e) => message.error(e.message))
-  }, [currentQuestion])
-
+  // useEffect(() => {
+  //   //set default active tab for questionLayout switcher every time when we change current question
+  //   setDefaultTab(currentQuestion?.layoutType)
+  //   //save data of current question to database, when it change
+  //   !!Object.keys(currentQuestion).length &&
+  //     setData(
+  //       COLLECTIONS.QUESTIONS,
+  //       currentQuestion?.id,
+  //       currentQuestion
+  //     ).catch((e) => message.error(e.message))
+  // }, [currentQuestion])
   return (
-    <>
+    <CurrentQuestionContextProvider>
       {formLoading || questionsListLoading ? (
         <Spinner />
       ) : (
@@ -105,14 +102,11 @@ function FormEdit(props) {
               )}
             </FormContentArea>
           </PageLayout>
-
           <EditorSidebar questions={questions} endings={endings} />
         </Box>
       )}
-    </>
+    </CurrentQuestionContextProvider>
   )
 }
-
 FormEdit.propTypes = {}
-
 export default FormEdit

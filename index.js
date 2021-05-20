@@ -1,2 +1,2 @@
-import {FormsAll} from './domains/Form/routes'
-export default FormsAll
+import {FormsAll,FormEdit} from './domains/Form/routes'
+export {FormsAll,FormEdit}

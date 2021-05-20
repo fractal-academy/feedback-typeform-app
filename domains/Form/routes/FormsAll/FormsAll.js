@@ -24,8 +24,6 @@ import COLLECTIONS from '../../../../constants/collection'
 import { FormSimpleView } from '../../../../domains/Form/components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import FormSimpleFormWithModal from '../../../../domains/Form/components/FormSimpleFormWithModal'
-import collection from "../../../../constants/collection";
-
 const { Title, Text } = Typography
 const mockRoutes = [
   { path: '/forms', page: 'Forms' },
@@ -33,21 +31,20 @@ const mockRoutes = [
   { path: '/videos', page: 'Videos' }
 ]
 function FormsAll(props) {
-  const {firestore,getCollectionRef,getTimestamp,setData}=props
+  const {getCollectionRef,getTimestamp,setData}=props
   // [ADDITIONAL HOOKS]
   const searchRef = useRef()
   const history = useHistory()
   const [data] = useCollectionData(
-    getCollectionRef(COLLECTIONS.FORMS).orderBy('creationDate', 'desc')
+    getCollectionRef(COLLECTIONS.FORMS)
   )
+  console.log(data)
   // [COMPONENT STATE HOOKS]
   const [isModalVisible, setIsModalVisible] = useState(false)
   const [currentData, setCurrentData] = useState(data)
   const fuse = new Fuse(data, { keys: ['title'] })
-
   // [COMPUTED PROPERTIES]
   let amountFiles = data?.length
-
   const formId = getCollectionRef(COLLECTIONS.FORMS).doc().id
   // [CLEAN FUNCTIONS]
   const searchData = () => {
@@ -56,12 +53,10 @@ function FormsAll(props) {
       setCurrentData(searchRes.map((item) => item.item))
     } else setCurrentData(data)
   }
-
-  // [USE_EFFECTS]
+  // // [USE_EFFECTS]
   useEffect(() => {
     data && setCurrentData(data)
   }, [data])
-
   const onFormCreate = async (data) => {
     await setData(COLLECTIONS.FORMS, formId, {
       id: formId,
@@ -70,7 +65,6 @@ function FormsAll(props) {
       creationDate: getTimestamp().now()
     }).catch((e) => message.error(e.message))
   }
-
   const menu = (
     <Menu>
       {mockRoutes.map((item, index) => (
@@ -84,10 +78,9 @@ function FormsAll(props) {
   const showModal = () => {
     setIsModalVisible(true)
   }
-  if (!data) {
-    return <Spinner />
-  }
-
+  // if (!data) {
+  //   return <Spinner />
+  // }
   return (
     <Box {...styles.mainWrapper}>
       {/* Page Header */}
@@ -129,7 +122,6 @@ function FormsAll(props) {
           <Text>You have {amountFiles} files.</Text>
         </Col>
       </Row>
-
       <Row noGutters mb={3}>
         <Col>
           <Input
@@ -145,7 +137,7 @@ function FormsAll(props) {
         flexDirection="row"
         className="custom-scroll">
         {/* Here should be list of data Images/Video */}
-        {currentData?.map((item, index) => (
+        {currentData && currentData?.map((item, index) => (
           <Box pr={3} pb={3} key={index}>
             <FormSimpleView
               id={item?.id}
@@ -162,7 +154,6 @@ function FormsAll(props) {
           onClick={showModal}>
           <PlusOutlined />
         </Box>
-
         <FormSimpleFormWithModal
           isModalVisible={isModalVisible}
           setIsModalVisible={setIsModalVisible}
@@ -172,7 +163,5 @@ function FormsAll(props) {
     </Box>
   )
 }
-
 FormsAll.propTypes = {}
-
 export default FormsAll
