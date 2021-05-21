@@ -1,5 +1,4 @@
 import { Button } from 'antd'
-import '../Button.styles.css'
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { useKeyPress } from '@umijs/hooks'

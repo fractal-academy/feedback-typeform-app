@@ -1,4 +1,3 @@
-import '../Button.styles.css'
 import { Button } from 'antd'
 import { Typography } from 'antd'
 import PropTypes from 'prop-types'

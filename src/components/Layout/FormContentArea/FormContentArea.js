@@ -1,6 +1,5 @@
 import { Row, Col } from '@qonsoll/react-design'
 import { Button } from 'antd'
-import './FormContentArea.styles.css'
 import PropTypes from 'prop-types'
 import MiddleContainer from '../MiddleContainer'
 import { ROUTES_PATHS } from '../../../constants'

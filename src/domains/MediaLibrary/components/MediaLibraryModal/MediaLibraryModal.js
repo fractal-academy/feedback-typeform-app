@@ -13,7 +13,6 @@ import { FilterOutlined, PlusOutlined, SearchOutlined } from '@ant-design/icons'
 import { globalStyles } from '../../../../../styles'
 import { styles } from './MediaLibraryModal.styles'
 import PropTypes from 'prop-types'
-import './MediaLibraryModal.styles.css'
 import {
   MediaLibraryFilter,
   MediaLibraryItemSimpleView

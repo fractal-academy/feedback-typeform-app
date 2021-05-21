@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types'
 import React,{ cloneElement } from 'react'
-import './QuestionSimpleView.styles.css'
 import { Popconfirm,  } from 'antd'
 import { LAYOUT_TYPES } from '../../../../constants'
 import { NumberedCard } from '../../../../components'

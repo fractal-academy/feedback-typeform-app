@@ -1,4 +1,3 @@
-import './EditorSidebar.styles.css'
 import React, { useState } from 'react'
 import { Row, Col, Box } from '@qonsoll/react-design'
 import { Typography, Divider, message, Button, Popover } from 'antd'

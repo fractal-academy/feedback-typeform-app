@@ -1,4 +1,3 @@
-import '../Button.styles.css'
 import PropTypes from 'prop-types'
 import { useHover } from '@umijs/hooks'
 import { Button } from 'antd'
