@@ -2,57 +2,26 @@
   "name": "feedback-typeform",
   "version": "0.1.0",
   "private": true,
-  "peerDependencies": {
-    "@ant-design/icons": "^4.6.2",
-    "@qonsoll/react-design": "^1.0.12",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
-    "@umijs/hooks": "^1.9.3",
-    "antd": "^4.14.1",
-    "craco-alias": "^2.2.0",
-    "craco-antd": "^1.19.0",
-    "craco-less": "^1.17.1",
-    "fuse.js": "^6.4.6",
-    "moment": "^2.29.1",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-firebase-hooks": "^3.0.3",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-sortable-hoc": "^2.0.0",
-    "styled-components": "^5.2.3",
-    "use-media": "^1.4.0"
+  "main": "build/index.js",
+  "module": "build/index.esm.js",
+  "description": "Type-Form",
+  "author": "okrdima",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fractal-academy/feedback-typeform-app.git"
   },
-  "dependencies": {
-    "@ant-design/icons": "^4.6.2",
-    "@qonsoll/react-design": "^1.0.12",
-    "@testing-library/jest-dom": "^5.11.10",
-    "@testing-library/react": "^11.2.5",
-    "@testing-library/user-event": "^12.8.3",
-    "@umijs/hooks": "^1.9.3",
-    "antd": "^4.14.1",
-    "array-move": "^3.0.1",
-    "craco-alias": "^2.2.0",
-    "craco-antd": "^1.19.0",
-    "craco-less": "^1.17.1",
-    "fuse.js": "^6.4.6",
-    "moment": "^2.29.1",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-firebase-hooks": "^3.0.3",
-    "react-firebase-file-uploader": "^2.4.4",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "react-sortable-hoc": "^2.0.0",
-    "styled-components": "^5.2.3",
-    "use-media": "^1.4.0"
+  "files": [
+    "dist"
+  ],
+  "source": "src/index.js",
+  "engines": {
+    "node": ">=10"
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "deploy-package": "npm run build && npm publish",
+    "build": "rollup -c",
     "test": "craco test",
     "eject": "react-scripts eject"
   },
@@ -62,29 +31,52 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
-  "devDependencies": {
-    "@storybook/addon-actions": "^6.1.14",
-    "@storybook/addon-essentials": "^6.1.14",
-    "@storybook/addon-links": "^6.1.14",
-    "@storybook/node-logger": "^6.1.14",
-    "@storybook/preset-create-react-app": "^3.1.5",
-    "@storybook/react": "^6.1.14",
-    "eslint": "^7.12.0",
-    "eslint-config-prettier": "^6.14.0",
-    "eslint-plugin-babel": "^5.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2"
-  }
+  "production": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ],
+  "dependencies": {
+    "@ant-design/icons": "^4.6.2",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "@qonsoll/react-design": "^1.0.12",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-multi-entry": "^4.0.0",
+    "@rollup/plugin-node-resolve": "^11.1.0",
+    "antd": "^4.14.1",
+    "babel-eslint": "^10.1.0",
+    "babel-plugin-import": "^1.13.3",
+    "babel-preset-react-app": "^10.0.0",
+    "fuse.js": "^6.4.6",
+    "react": ">=16.8.2",
+    "react-dom": ">=16.8.2",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "rollup": "^2.38.0",
+    "rollup-plugin-astroturf": "^0.1.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-css-only": "^3.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-watch": "^4.3.1",
+    "styled-components": "^5.2.3"
+  },
+  "devDependencies": {},
+  "bugs": {
+    "url": "https://github.com/fractal-academy/feedback-typeform-app.git/issues"
+  },
+  "homepage": "https://github.com/fractal-academy/feedback-typeform-app.git#readme"
 }
