@@ -35,9 +35,7 @@ export default {
   external: [
     'react',
     'react-dom',
-    'react-hook-form',
-    'antd',
-    '@qonsoll/react-design'
+    'react-hook-form'
   ],
   plugins: [
     babel({
