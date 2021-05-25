@@ -24,6 +24,9 @@ import COLLECTIONS from '../../../../constants/collection'
 import { FormSimpleView } from '../../components'
 import { useCollectionData } from 'react-firebase-hooks/firestore'
 import FormSimpleFormWithModal from '../../components/FormSimpleFormWithModal'
+import setData from '../../../../services/setData'
+import getTimestamp from '../../../../services/getTimestamp'
+import getCollectionRef from '../../../../services/getCollectionRef'
 const { Title, Text } = Typography
 const mockRoutes = [
   { path: '/forms', page: 'Forms' },
@@ -31,7 +34,7 @@ const mockRoutes = [
   { path: '/videos', page: 'Videos' }
 ]
 function FormsAll(props) {
-  const {getCollectionRef,getTimestamp,setData}=props
+  // const {getCollectionRef,getTimestamp,setData}=props
   // [ADDITIONAL HOOKS]
   const searchRef = useRef()
   const history = useHistory()

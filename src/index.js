@@ -1,2 +1,3 @@
 import {FormsAll,FormEdit} from './domains/Form/routes'
-export {FormsAll,FormEdit}
+import firebaseConfigurator from './services/firebaseConfigurator'
+export {FormsAll,FormEdit,firebaseConfigurator}
