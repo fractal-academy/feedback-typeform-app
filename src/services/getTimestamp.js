@@ -1,9 +1,8 @@
-import firebaseConfigurator from './firebaseConfigurator'
 
 /**
  *
  * @returns {firebase.firestore.Timestamp}
  */
-const getTimestamp = () => firebaseConfigurator.firebase.firestore.Timestamp
+const getTimestamp = (firebase) => firebase?.firestore().Timestamp
 
 export default getTimestamp
