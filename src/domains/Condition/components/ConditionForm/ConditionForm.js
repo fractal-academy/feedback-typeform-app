@@ -48,8 +48,11 @@ function ConditionForm(props) {
     item,
     addCondition,
     addRedirectQuestion,
-    getQuestionListRedirect
+    getQuestionListRedirect,
+    isReseted,
+    setIsReseted
   } = props
+
   return (
     <NumberedCard number={mockQuestionIndex + 2} key={mockQuestionIndex}>
       <Box ml={3}>

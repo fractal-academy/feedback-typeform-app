@@ -6,6 +6,7 @@ import { Modal, Button, Typography } from 'antd'
 import { Row, Col } from '@qonsoll/react-design'
 import typeformTheme from '../../../../../styles/theme'
 import { ThemeContext } from 'styled-components'
+import { cloneElement } from 'react'
 
 const { Title, Text } = Typography
 
@@ -14,9 +15,12 @@ function ModalWithFormConditionsForm(props) {
   const theme = useContext(ThemeContext)
   // [COMPONENT STATE HOOKS]
   const [isModalVisible, setIsModalVisible] = useState(false)
+  const [isReseted, setIsReseted] = useState(false)
 
   // [CLEAN FUNCTIONS]
-  const resetLogic = () => {}
+  const resetLogic = () => {
+    setIsReseted(true)
+  }
   const onSave = () => {
     setIsModalVisible(!isModalVisible)
   }
@@ -67,7 +71,7 @@ function ModalWithFormConditionsForm(props) {
             </Row>
           </>
         }>
-        {children}
+        {cloneElement(children, { isReseted, setIsReseted })}
       </Modal>
     </>
   )

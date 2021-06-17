@@ -99,6 +99,7 @@ function FormConditionsForm(props) {
       {mockQuestion.map((item, mockQuestionIndex) => (
         <Box mb={3}>
           <ConditionForm
+            {...props}
             key={mockQuestionIndex}
             mockQuestionIndex={mockQuestionIndex}
             item={item}
