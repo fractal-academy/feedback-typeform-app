@@ -42,7 +42,7 @@ function ContentCard(props) {
     leftSideMenu,
     brightnessValue,
     children,
-    topOffset = '56',
+    topOffset = '56px',
     wrapperHeight = '100vh'
   } = props
 
