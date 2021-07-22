@@ -38,7 +38,7 @@ function VideoRecording(props) {
 
   return (
     <ZiggeoRecorder
-      locale="no"
+      locale="en"
       apiKey={API_KEY}
       height="-webkit-fill-available"
       width="-webkit-fill-available"
