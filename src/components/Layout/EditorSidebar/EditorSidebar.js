@@ -27,54 +27,6 @@ import { PopoverNegativeMarin } from '../../../../styles/NegativeMargin'
 
 const { Title } = Typography
 
-//configuration for certain types of questions
-const choicesConfiguration = [
-  {
-    answerOptionId: uuid(),
-    answerOption: 'default',
-    image: '',
-    redirectQuestion: '',
-    redirectConditionRule: ''
-  }
-]
-const yesNoConfiguration = [
-  {
-    answerOptionId: uuid(),
-    answerOption: 'Yes',
-    redirectQuestion: '',
-    redirectConditionRule: ''
-  },
-  {
-    answerOptionId: uuid(),
-    answerOption: 'No',
-    redirectQuestion: '',
-    redirectConditionRule: ''
-  }
-]
-const opinionAndRatingConfiguration = Array(5)
-  .fill(0)
-  ?.map((_, index) => ({
-    answerOptionId: uuid(),
-    answerOption: 1 + index,
-    redirectQuestion: '',
-    redirectConditionRule: ''
-  }))
-
-const defaultConfiguration = [
-  {
-    answerOptionId: '',
-    answerOption: '',
-    redirectQuestion: '',
-    redirectConditionRule: ''
-  }
-]
-const endingConfigurations = [
-  {
-    answerOptionId: '',
-    triggerQuestionId: ''
-  }
-]
-
 function EditorSidebar(props) {
   const {
     id,
@@ -119,6 +71,47 @@ function EditorSidebar(props) {
     ].includes(key)
 
     const isYesNo = key === QUESTION_TYPES.YES_NO
+    //configuration for certain types of questions
+    const choicesConfiguration = [
+      {
+        answerOptionId: uuid(),
+        answerOption: 'default',
+        image: '',
+        redirectQuestion: '',
+        redirectConditionRule: ''
+      }
+    ]
+    const yesNoConfiguration = [
+      {
+        answerOptionId: uuid(),
+        answerOption: 'Yes',
+        redirectQuestion: '',
+        redirectConditionRule: ''
+      },
+      {
+        answerOptionId: uuid(),
+        answerOption: 'No',
+        redirectQuestion: '',
+        redirectConditionRule: ''
+      }
+    ]
+    const opinionAndRatingConfiguration = Array(5)
+      .fill(0)
+      ?.map((_, index) => ({
+        answerOptionId: uuid(),
+        answerOption: 1 + index,
+        redirectQuestion: '',
+        redirectConditionRule: ''
+      }))
+
+    const defaultConfiguration = [
+      {
+        answerOptionId: '',
+        answerOption: '',
+        redirectQuestion: '',
+        redirectConditionRule: ''
+      }
+    ]
 
     //pass data to question configurations depending on question type
     const questionConfigurations = isChoices
@@ -136,9 +129,7 @@ function EditorSidebar(props) {
 
     // default data for created question
     const newQuestion = {
-      questionConfigurations: isEnding
-        ? endingConfigurations
-        : questionConfigurations,
+      questionConfigurations: isEnding ? [] : questionConfigurations,
       id: questionId,
       formId: id,
       layoutType: LAYOUT_TYPE_KEYS[0],
@@ -184,7 +175,7 @@ function EditorSidebar(props) {
   }
 
   const onResetLogic = () => {
-    questions.forEach((item) => {
+    questions?.forEach((item) => {
       const condition = [
         QUESTION_TYPES.OPINION_SCALE,
         QUESTION_TYPES.RATING,
@@ -192,11 +183,14 @@ function EditorSidebar(props) {
         QUESTION_TYPES.CHOICE,
         QUESTION_TYPES.YES_NO
       ].includes(item.questionType)
-      const newQuestionConfigs = item.questionConfigurations?.map(
+      const newQuestionConfigs = item?.questionConfigurations?.map(
         (answerConfig) => {
           const formattedObject = Object.entries(answerConfig)
           const resetFields = formattedObject?.map((tuple) => {
-            if (tuple[0] === 'answerOption' && condition) {
+            if (
+              ['answerOption', 'answerOptionId'].includes(tuple[0]) &&
+              condition
+            ) {
               return tuple
             } else {
               return [tuple[0], '']
@@ -219,11 +213,28 @@ function EditorSidebar(props) {
   }
 
   const onResetEndings = () => {
-    console.log('reset endgins')
+    endings?.forEach((ending) =>
+      setData(COLLECTIONS.QUESTIONS, ending?.id, {
+        questionConfigurations: []
+      })
+    )
+  }
+  const onResetAnswersScore = () => {
+    answerScoresData?.forEach((item) =>
+      setData(COLLECTIONS.ANSWERS_SCORES_CONDITIONS, item?.id, {
+        questionScores: []
+      })
+    )
   }
 
   //[COMPUTED PROPERTIES]
-  const ConditionsQuestionsList = useMemo(
+  const resetActionsMap = {
+    1: onResetLogic,
+    2: onResetEndings,
+    3: onResetAnswersScore
+  }
+
+  const conditionsQuestionsList = useMemo(
     () =>
       questions
         ? questions?.filter(
@@ -308,14 +319,14 @@ function EditorSidebar(props) {
 
             <Col cw="auto" v="center" ml={1}>
               <ModalWithFormConditionsForm
-                onResetClick={tabKey === '1' ? onResetLogic : onResetEndings}
+                onResetClick={resetActionsMap[tabKey]}
                 btnProps={{ icon: <SettingOutlined />, type: 'text' }}>
                 <FormConditionsForm
                   endings={endings}
                   formData={formData}
                   onTabChange={onTabChange}
-                  data={ConditionsQuestionsList}
                   answerScores={answerScoresData}
+                  conditionsQuestionsList={conditionsQuestionsList}
                 />
               </ModalWithFormConditionsForm>
             </Col>

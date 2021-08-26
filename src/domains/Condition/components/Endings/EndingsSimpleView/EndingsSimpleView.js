@@ -45,6 +45,7 @@ function EndingSimpleView(props) {
       questionConfigurations
     })
   }
+
   const defaultSelectValue = useMemo(
     () =>
       item?.questionConfigurations?.[0]?.triggerQuestionId
@@ -70,7 +71,11 @@ function EndingSimpleView(props) {
             questionsForEndingSelectPlaceholder ||
             'Select questions to call current ending'
           }
-          defaultValue={defaultSelectValue}
+          value={
+            !!defaultSelectValue?.length
+              ? defaultSelectValue
+              : item?.questionConfigurations
+          }
           onChange={handleChange}
           optionLabelProp="label">
           {questionsData?.map((questionListItem, index) => (

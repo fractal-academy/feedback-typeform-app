@@ -16,7 +16,13 @@ import { EmptyState, CustomTabs } from './FormConditionsForm.styles'
 const { TabPane } = Tabs
 
 function FormConditionsForm(props) {
-  const { data, endings, formData, onTabChange, answerScores } = props
+  const {
+    endings,
+    formData,
+    onTabChange,
+    answerScores,
+    conditionsQuestionsList
+  } = props
 
   // [ADDITIONAL HOOKS]
   const { setData } = useFunctions()
@@ -31,19 +37,23 @@ function FormConditionsForm(props) {
 
   // [CLEAN FUNCTIONS]
   const getQuestionListRedirect = (itemIndex) => {
-    return data?.filter((_, index) => itemIndex !== index)
+    return conditionsQuestionsList?.filter((_, index) => itemIndex !== index)
   }
 
   const addCondition = (answer, index) => {
-    setData(COLLECTIONS.QUESTIONS, data?.[index]?.id, {
-      questionConfigurations: [...data?.[index]?.questionConfigurations, answer]
+    setData(COLLECTIONS.QUESTIONS, conditionsQuestionsList?.[index]?.id, {
+      questionConfigurations: [
+        ...conditionsQuestionsList?.[index]?.questionConfigurations,
+        answer
+      ]
     })
   }
 
   const addRedirectQuestion = (nextQuestion, answerIndex, index) => {
     //create new array questionConfigur ations of certain question
 
-    const updatedQuestionConfigurations = data[index]?.questionConfigurations
+    const updatedQuestionConfigurations =
+      conditionsQuestionsList[index]?.questionConfigurations
     // update redirect question of certain question
     const isDataChanged =
       updatedQuestionConfigurations[answerIndex].redirectQuestion !==
@@ -52,7 +62,7 @@ function FormConditionsForm(props) {
     if (isDataChanged) {
       updatedQuestionConfigurations[answerIndex].redirectQuestion = nextQuestion
       //write new data to db
-      setData(COLLECTIONS.QUESTIONS, data[index]?.id, {
+      setData(COLLECTIONS.QUESTIONS, conditionsQuestionsList[index]?.id, {
         questionConfigurations: updatedQuestionConfigurations
       })
     }
@@ -64,8 +74,8 @@ function FormConditionsForm(props) {
   //[COMPUTED PROPERTIES]
   const filteredAnswerForEndings = useMemo(
     () =>
-      data
-        ? data?.filter((item) =>
+      conditionsQuestionsList
+        ? conditionsQuestionsList?.filter((item) =>
             [
               QUESTION_TYPES.CHOICE,
               QUESTION_TYPES.PICTURE_CHOICE,
@@ -75,7 +85,7 @@ function FormConditionsForm(props) {
             ].includes(item.questionType)
           )
         : [],
-    [data]
+    [conditionsQuestionsList]
   )
 
   return (
@@ -85,8 +95,8 @@ function FormConditionsForm(props) {
           tab={conditionsLogicJumpsTab || 'Logic jumps'}
           key="1"
           style={{ overflowY: 'scroll', overflowX: 'hidden' }}>
-          {data?.length > 0 ? (
-            data?.map((item, index) => (
+          {conditionsQuestionsList?.length > 0 ? (
+            conditionsQuestionsList?.map((item, index) => (
               <Box mb={3}>
                 <ConditionForm
                   key={index}
@@ -148,8 +158,8 @@ function FormConditionsForm(props) {
                 <Box mb={3}>
                   <ScoreConditionsAdvancedView
                     key={index}
-                    questionData={item}
                     index={index}
+                    questionData={item}
                     questionScoresData={findAnswerScoreByQuestionId(item?.id)}
                   />
                 </Box>
@@ -180,7 +190,7 @@ function FormConditionsForm(props) {
 
 FormConditionsForm.propTypes = {
   onTabChange: PropTypes.func,
-  data: PropTypes.array.isRequired,
+  conditionsQuestionsList: PropTypes.array.isRequired,
   endings: PropTypes.array
 }
 

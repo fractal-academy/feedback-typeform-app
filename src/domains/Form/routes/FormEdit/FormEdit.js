@@ -27,41 +27,6 @@ import useFunctions from '../../../../hooks/useFunctions'
 import ActionsFunctionsContext from '../../../../context/ActionsFunctions/ActionsFunctionsContext'
 import { v4 as uuid } from 'uuid'
 
-//configuration for certain types of questions
-const defaultConfigurations = {
-  answerOption: '',
-  redirectQuestion: '',
-  answerOptionId: '',
-  redirectConditionRule: ''
-}
-const choicesConfiguration = [
-  {
-    ...defaultConfigurations,
-    image: '',
-    answerOptionId: uuid(),
-    answerOption: 'default'
-  }
-]
-const yesNoConfiguration = [
-  {
-    ...defaultConfigurations,
-    answerOption: 'Yes',
-    answerOptionId: uuid()
-  },
-  {
-    ...defaultConfigurations,
-    answerOption: 'No',
-    answerOptionId: uuid()
-  }
-]
-const opinionAndRatingConfiguration = Array(5)
-  .fill(0)
-  ?.map((_, index) => ({
-    ...defaultConfigurations,
-    answerOption: 1 + index,
-    answerOptionId: uuid()
-  }))
-
 function FormEdit(props) {
   const {
     firebase,
@@ -152,7 +117,40 @@ function FormEdit(props) {
     ].includes(key)
 
     const isYesNo = key === QUESTION_TYPES.YES_NO
-
+    //configuration for certain types of questions
+    const defaultConfigurations = {
+      answerOption: '',
+      redirectQuestion: '',
+      answerOptionId: '',
+      redirectConditionRule: ''
+    }
+    const choicesConfiguration = [
+      {
+        ...defaultConfigurations,
+        image: '',
+        answerOptionId: uuid(),
+        answerOption: 'default'
+      }
+    ]
+    const yesNoConfiguration = [
+      {
+        ...defaultConfigurations,
+        answerOption: 'Yes',
+        answerOptionId: uuid()
+      },
+      {
+        ...defaultConfigurations,
+        answerOption: 'No',
+        answerOptionId: uuid()
+      }
+    ]
+    const opinionAndRatingConfiguration = Array(5)
+      .fill(0)
+      ?.map((_, index) => ({
+        ...defaultConfigurations,
+        answerOption: 1 + index,
+        answerOptionId: uuid()
+      }))
     //define question configurations depending on question type
     const questionConfigurations = isChoices
       ? choicesConfiguration

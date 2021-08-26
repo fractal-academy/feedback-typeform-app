@@ -5,3 +5,4 @@ export { default as ModalWithFormConditionsForm } from './ModalWithFormCondition
 export { default as ConditionView } from './ConditionView'
 export { default as EndingsSimpleView } from './Endings/EndingsSimpleView'
 export { default as ScoreConditionsAdvancedView } from './ScoreConditionsAdvancedView'
+export { default as ScoreConditionsItemRow } from './ScoreConditionsItemRow'

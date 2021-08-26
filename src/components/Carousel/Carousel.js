@@ -71,6 +71,7 @@ function Carousel(props) {
           payload: answerData
         })
       }
+
       carouselRef.current?.next()
       setIsAnswered && setIsAnswered(false)
     }
@@ -90,12 +91,13 @@ function Carousel(props) {
     setPreviousQuestionOrder(temp)
   }
 
-  const handleNextClick = (e) => {
+  const handleNextClick = async (e) => {
     setPreviousQuestionOrder((prevState) =>
       prevState?.[prevState?.length - 1] !== currentSlide
         ? [...(prevState || []), currentSlide]
         : prevState || []
     )
+    await setIsAnswered(true)
     next(e)
   }
 

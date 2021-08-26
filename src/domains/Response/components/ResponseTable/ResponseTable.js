@@ -61,7 +61,7 @@ function ResponseTable(props) {
   const { emptyStateAnswersDescription } = useTranslation()
 
   useEffect(() => {
-    if (isFormQuiz)
+    if (isFormQuiz) {
       columns?.push({
         render: (text, record) => (
           <div
@@ -77,6 +77,7 @@ function ResponseTable(props) {
         dataIndex: 'answerScore',
         key: 'answerScore'
       })
+    }
   }, [])
 
   return (

@@ -18,7 +18,6 @@ import { message } from 'antd'
 import { EmptyState } from '../../../../../src/domains/Form/components/FormConditionsForm/FormConditionsForm.styles'
 import useMedia from 'use-media'
 import Text from 'antd/es/typography/Text'
-import { doc } from 'prettier'
 
 function FormAnswers(props) {
   const { actions = {}, id, translate, firebase, configurations } = props
@@ -61,7 +60,7 @@ function FormAnswers(props) {
           key: index,
           questionTitle: item?.data()?.questionTitle,
           answer: answerCheck,
-          answerScore: item?.data()?.answerScore,
+          answerScore: item?.data()?.answerScore || 'No scores',
           order: item?.data()?.order
         }
       })
